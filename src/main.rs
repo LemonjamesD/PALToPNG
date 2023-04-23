@@ -17,7 +17,7 @@ fn main() {
         // Read the file to a byte vec
         let mut buffer = match std::fs::read(file_name) {
             Ok(e) => e,
-            Err(_) => panic!("Couldn't read the file to string")
+            Err(e) => panic!("Couldn't read the file to string, {e}")
         };
 
         println!("{buffer:x?} {}", buffer.len());
